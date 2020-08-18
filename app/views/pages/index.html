@@ -17,7 +17,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -40,14 +40,142 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
+      <div>
+        <a href="#" data-toggle="modal" data-target="#modalConnexion">
+          <i class="fal fa-user-circle" style="font-size: 30px;"></i>
+        </a>
+      </div>
     </div>
   </nav>
+  
+
+
+  
+
+
+
+
+
+
+
+  <!-- [[MODAL]] -->
+  
+  <div class="modal fade" style="min-height: 60vh;" id="modalConnexion" tabindex="-1" aria-labelledby="modalConnexionLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" >
+      <div class="modal-content" style="min-height: 65vh;">
+        <div class="modal-header">
+          <h5 class="modal-title mx-auto" id="modalConnexionLabel">Login or Sign-in for bouffer</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <!-- Tabs system -->
+          <ul class="nav nav-pills justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="pill" href="#login">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="pill" href="#register">Link</a>
+            </li>
+          </ul>
+
+          <!-- Login form-->
+          <div class="tab-content">
+            <div id="login" class="container tab-pane active">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+
+            </div>
+            <div id="register" class="container tab-pane fade"><br>
+              <form>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputFirstName">First-Name</label>
+                    <input type="text" class="form-control" id="inputFirstName">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputLastName">Last-Name</label>
+                    <input type="text" class="form-control" id="inputLastName">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="PSG en demi">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Choose...</option>
+                      <option>France</option>
+                      <option>M'Bappé</option>
+                      <option>USA USA USA USA</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Remember me
+                    </label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </form>
+            </div>
+
+
+
+        </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- [fin MODAL] -->
+  
   
   <!-- [card] -->
   <div class="d-flex px-3">
     <div class="row px-3 px-md-5 justify-content-center justify-content-md-center flex-wrap ">
       
-      <div class="col-10 col-sm-5 col-md-3 shadow p-0 my-3 m-sm-2 m-lg-5" style="border-radius: 30px;">
+      <div class="col-10 col-sm-5 col-md-3 shadow-sm p-0 my-3 m-sm-2 m-lg-5" style="border-radius: 30px;">
         <img src="https://cdn.pixabay.com/photo/2020/05/13/21/03/dog-food-5168940_960_720.jpg" style="border-radius:30px 30px 0 0;" class="card-img-top" style="height: 14em; object-fit: cover; object-position: top;" alt="...">
         <div class="m-4">
           <h5>Néméria</h5>
@@ -102,7 +230,7 @@
           <p>Ravioli crokeotini a la spiacci gambi</p>
         </div>
       </div>
-
+      
       
       
       <!-- <div class="card shadow border-0 col-sm-6 col-lg-4 my-3 mx-md-3 p-0" style="border-radius: 30px;">
@@ -136,3 +264,5 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
