@@ -6,13 +6,13 @@ h1 {
   font-weight: 700;
 }
 
-.container {
-  background-color: rgba(99, 63, 182, 0.4);
+#new {
+  background-color: rgba(195, 199, 204, 0.4);
   padding: 20px;
 }
 
-.submit-color {
-  color : #633FB6;
-  text-shadow: 2px 2px #ff0000;
-  background-color: rgba(99, 63, 182, 0.5);
+#submit-color {
+  color : rgba(195, 199, 204, 1.000);
+  text-shadow: 2px 2px rgba(64, 78, 84, 1.000);
+  background-color: rgba(64, 78, 84, 1.000);
 }
