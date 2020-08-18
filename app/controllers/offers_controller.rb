@@ -4,6 +4,7 @@ class OffersController < ApplicationController
   end
 
   def show
+    @offer = Offer.find(params[:id])
   end
 
   def new
@@ -34,6 +35,9 @@ class OffersController < ApplicationController
   end
 
   def destroy
+    @offer = Offer.find(params[:id])
+    @offer.destroy
+    redirect_to offers_path
   end
 
   private
