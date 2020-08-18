@@ -4,7 +4,7 @@
   <%= simple_form_for @offer do |f| %>
     <%= f.input :title %>
     <%= f.input :price %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: Offer::CATEGORIES %>
     <%= f.input :description %>
     <%= f.input :date %>
     <%= f.button :submit, value: 'Créer mon offre', class: 'submit-color' %>
