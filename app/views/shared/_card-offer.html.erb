@@ -1,0 +1,14 @@
+<div class="card-offer m-4 border shadow-lg p-0">
+  <%= image_tag("https://res.cloudinary.com/kyulol/image/upload/v1597399204/samples/animals/kitten-playing.gif", crop: :fill, class: "card-offer-img") %>
+  <div class="card-offer-body p-4">
+    <h5><%= offer.title %></h5>
+    <div class="d-flex justify-content-between">
+      <p class="card-offer-tag px-2 py-1 bg-dark text-white rounded"><%= offer.category %></p>
+      <span><%= offer.price %> €</span>
+    </div>
+    <span><%= offer.date %></span>
+  </div>
+</div>
+
+
+    
