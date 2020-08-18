@@ -1,22 +1,38 @@
-<h1>Offers#show</h1>
-<p>Find me in app/views/offers/show.html.erb</p>
-
-<%= @offer.title %>
-<br>
-<%= @offer.price %>
-<br>
-<%= @offer.category %>
-<br>
-<%= @offer.description %>
-<br>
-<%= @offer.date %>
-<br>
-
-<%= link_to "Edit offer", edit_offer_path(@offer) %>
-<br>
-
-<%= link_to "Delete offer", offer_path(@offer), method: :delete, data: { confirm: "Are you sure?" } %>
-<br>
-
-<%= link_to "Back to Home", offers_path %>
-
+<div class="container">
+  <%# <h2> Proposé par <%= @user.first_name @user.last_name %> <%# </h2> %>
+  <img class="w-100 circle" src="https://www.englishclub.com/images/vocabulary/food/italian/italian-food-640.jpg" alt="italian food">
+  <div class="py-4 d-flex justify-content-between align-items-center">
+    <h1 class="m-0" style="font-family: 'Playball', cursive; font-size: 68px;"><%= @offer.title %></h1>
+    <img class="rounded-circle" style="width: 75px; height: 75px; object-fit: cover;" src="https://www.thelocal.se/userdata/images/article/6d67730d16af04f3f956389d4cc244af808b8381c23b1e3d218ecd792de14fa8.jpg" alt="avatar user">
+  </div>
+  <div>
+    <div class="py-4 border-top d-flex align-items-center">
+      <i class="fas fa-dollar-sign pr-4" style="font-size: 36px;"></i>
+      <div>
+        <p class="m-0"> <strong> Prix proposé : </strong> </p>
+        <p class="m-0"> <%= @offer.price %> </p>
+      </div>
+    </div>
+    <div class="py-4 border-top d-flex align-items-center">
+      <i class="fas fa-tag pr-4" style="font-size: 36px;"></i>
+      <div>
+        <p class="m-0"> <strong> Catégorie : </strong> </p>
+        <p class="m-0"> <%= @offer.category %> </p>
+      </div>
+    </div>
+    <div class="py-4 border-top d-flex align-items-center">
+      <i class="fas fa-utensils pr-4" style="font-size: 36px;"></i>
+      <div>
+        <p class="m-0"> <strong> Description : </strong> </p>
+        <p class="m-0"> <%= @offer.description %> </p>
+      </div>
+    </div>
+    <div class="py-4 border-top d-flex align-items-center">
+      <i class="fas fa-calendar-alt pr-4" style="font-size: 36px;"></i>
+      <div>
+        <p class="m-0"> <strong> Repas proposé le : </strong> </p>
+        <p class="m-0"> <%= @offer.date %> </p>
+      </div>
+    </div>
+  </div>
+</div>
