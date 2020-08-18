@@ -1,1 +1,45 @@
 // Specific CSS for your home-page
+body{
+  min-height: 100vh;
+  background-color: white;
+}
+.banner-home{
+  width: 100%;
+  height: 50vh;
+  background: url("https://res.cloudinary.com/kyulol/image/upload/v1597791731/pasta-1181189_uf1gji.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.container-search-bar{
+  height: 50px;
+  // border-radius: 10px;
+}
+.container-search-bar div .input-group-prepend .form-control{
+  border-radius: 10px 0 0 10px;
+}
+.icons-in-search-bar{
+  padding: 10px 0;
+  cursor: pointer;
+}
+.container-search-bar div .input-group-append button{
+  height: 38px;
+  border-radius: 0 10px 10px 0;
+}
+
+.card-home{
+  min-height: 710px;
+}
+.card-home-img{
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+.card-home-body{
+  height: 310px;
+}
+
+.tag-category{
+  border-radius: 15px;
+}
