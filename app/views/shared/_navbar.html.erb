@@ -17,10 +17,14 @@
       <li class="nav-item">
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
+      <li class="nav-item align-right mr-5">
+        <%= link_to "Logout",  destroy_user_session_path, method: :delete %>
+      </li>
       <li class="nav-item align-right">
       <a href="#" class="nav-item" data-toggle="modal" data-target="#modalConnexion">
           <i class="fal fa-user-circle" style="font-size: 30px;"></i>
-        </a></li>
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -28,3 +32,4 @@
 </div>
 
 <%= render  "shared/modal" %>
+
