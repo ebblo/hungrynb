@@ -4,4 +4,6 @@ class Offer < ApplicationRecord
   has_many :users, through: :bookings
 
   validates :title, :price, :category, :description, :date, presence: true
+
+  CATEGORIES = ["French", "Italian", "Chinese"]
 end
