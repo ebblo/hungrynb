@@ -12,6 +12,9 @@
 <%= @offer.date %>
 <br>
 
+<%= link_to "Edit offer", edit_offer_path(@offer) %>
+<br>
+
 <%= link_to "Delete offer", offer_path(@offer), method: :delete, data: { confirm: "Are you sure?" } %>
 <br>
 
