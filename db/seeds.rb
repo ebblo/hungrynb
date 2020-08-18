@@ -14,8 +14,6 @@ Offer.destroy_all
 User.destroy_all
 
 puts "Start seeding"
-# my_user = User.new(email: "totu@toto.com", password: "123456")
-# my_user.save!
 
 10.times do
   my_user = User.new(email: Faker::Internet.email, password: "123456")
@@ -28,4 +26,6 @@ puts "Start seeding"
   my_offer.user = my_user
   my_offer.save!
 end
+
+puts "Seeding done"
 
