@@ -1,7 +1,24 @@
 .align-right{
   position: absolute;
   right: 20px;
-  top: 20px;
+
+}
+.img-navbar{
+  object-fit: cover;
+  object-position: center;
+  height: 65px;
+}
+.text-navbar{
+  color: #091f36;
+}
+#navbar-id{
+  height: auto;
+  background-color: #ffffff;
+}
+.dropdown-menu.show{
+  right: 50px;
+  top: -7px;
+  padding-left: 1em;
 }
 
 @media screen and (max-width: 992px) {

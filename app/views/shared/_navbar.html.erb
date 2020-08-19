@@ -1,16 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top d-flex justify-content-lg-between">
-  <%= link_to "HungrYnB", offers_path, class: "navbar-brand" %>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top d-flex flex-lg-column justify-content-lg-between px-0 py-lg-4" id="navbar-id">
+
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <img src="https://res.cloudinary.com/kyulol/image/upload/v1597831305/logo-bouffe-blc_iuxhzy.jpg" class="img-navbar my-2 p-0" alt="" loading="lazy">
+  <% end %>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-    <% if user_signed_in? %>
-      <li class="nav-item align-right">
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <li class="nav-item mx-4">
+        <%= link_to  "Home", root_path, class: "text-navbar active" %>
       </li>
+      <li class="nav-item mx-4">
+        <%= link_to  "Consulter mes menus", class: "text-navbar" %>
+      </li>
+      <li class="nav-item mx-4">
+        <%= link_to  "Créer un menu", new_offer_path, class: "text-navbar" %>
+      </li>
+    <% if user_signed_in? %>
+
+        <li class="nav-item dropleft align-right" id="test">
+          <a href="#" class="nav-item" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fal fa-user-circle text-navbar" style="font-size: 30px;"></i>
+            </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <p><%= link_to "Profil" %></p>
+            <p><%= link_to "Settings" %></p>
+            <p><%= link_to "Log out", destroy_user_session_path, method: :delete %></p> 
+          </div>
+        </li>
     <% else %>
-      <li class="nav-item align-right">
+      <li class="nav-item flex-grow-1">
         <%= link_to "Login", user_session_path, method: :post %>
         <%# <a href="#" class="nav-item" data-toggle="modal" data-target="#modalConnexion">
           <i class="fal fa-user-circle" style="font-size: 30px;"></i>
@@ -24,4 +46,7 @@
 </div>
 
 <%= render  "shared/modal" %>
-
+<%# modal %>
+<%# <a href="#" class="nav-item" data-toggle="modal" data-target="#modalConnexion">
+  <i class="fal fa-user-circle" style="font-size: 30px;"></i>
+</a> %>
