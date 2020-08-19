@@ -1,8 +1,8 @@
 <h1>Choisissez une proposition de repas</h1>
 <br>
 
-<div class="container container-sm-fluid border bg-transparent d-flex flex-column align-items-center">
-  <div class="row justify-content-md-around justify-content-center flex-wrap">
+<div class="container container-sm-fluid bg-transparent d-flex flex-column align-items-center">
+  <div class="row justify-content-md-around justify-content-center flex-wrap rounded">
     <% @offers.each do |offer| %>
       <%= link_to offer_path(offer), class: "col-10 col-md-5 col-lg-3 m-2 mx-md-0 " do %>
         <%= render  "shared/card-offer", offer: offer %>

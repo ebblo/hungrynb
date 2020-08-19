@@ -1,5 +1,5 @@
 
-<div class="card-offer border shadow p-0">
+<div class="card-offer p-0">
 
   <% if offer.photo.attached? %>
     <%= cl_image_tag offer.photo.key, crop: :fill, class: "card-offer-img" %>
@@ -8,7 +8,7 @@
       crop: :fill, class: "card-offer-img") %>
   <% end %>
 
-  <div class="card-offer-body p-4">
+  <div class="card-offer-body p-4 shadow-lg">
     <h5><%= offer.title %></h5>
     <div class="d-flex justify-content-between">
       <p class="card-offer-tag px-2 py-1 bg-dark text-white rounded"><%= offer.category %></p>
