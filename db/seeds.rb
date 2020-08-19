@@ -7,14 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require "faker"
 
-require "faker"
-
 puts "Deleting old seeds"
 Booking.destroy_all
 Offer.destroy_all
 User.destroy_all
 
 puts "Start seeding"
+
+# test user
+test_user = User.new(email: 'john.doe@gmail.com', password: '123456', first_name: 'John', last_name: 'Doe', address: 'Rte du Lac, Nyon', phone_number: '0792655478')
+test_user.save
 
 10.times do
   my_user = User.new(email: Faker::Internet.email, 
