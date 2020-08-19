@@ -1,34 +1,48 @@
 <div class="container px-4 pt-4">
-  <%# <h2> Proposé par <%= @user.first_name @user.last_name %> <%# </h2> %>
   <% if @offer.photo.attached? %>
-    <%= cl_image_tag @offer.photo.key, crop: :fill, class: "w-100 card-offer-img-big" %>
+    <%= cl_image_tag @offer.photo.key, crop: :fill, class: "shadow-lg p-3 mb-5 w-100 card-offer-img-big" %>
   <% else %>
-    <img class="w-100 circle" src="https://www.englishclub.com/images/vocabulary/food/italian/italian-food-640.jpg" alt="italian food">
+    <img class="w-100 circle shadow-lg mb-5" src="https://www.englishclub.com/images/vocabulary/food/italian/italian-food-640.jpg" alt="italian food">
   <% end %>
-  <%# <img class="w-100 circle" src="https://www.englishclub.com/images/vocabulary/food/italian/italian-food-640.jpg" alt="italian food"> %>
-  <div class="py-4 d-flex justify-content-between align-items-center">
+  
+  <div class="pt-4 d-flex justify-content-between align-items-center">
     <h1 class="m-0" style="font-family: 'Playball', cursive; font-size: 68px;"><%= @offer.title %></h1>
     <img class="rounded-circle" style="width: 75px; height: 75px; object-fit: cover;" src="https://static.skillshare.com/uploads/project/4c49440fec9b45c5464596033e0a23d7/ad168d89" alt="avatar user">
   </div>
+  <div class="card pt-1 pb-2 pl-2 m-3 rounded" style="border: none">
+    <h4> Proposé par <strong> <%= @user.first_name %> <%= @user.last_name %></strong> </h4>
+    <div class="pl-3 py-0 d-flex align-items-center">
+      <i class="fas fa-envelope"></i>
+      <p class="m-0 pl-2"> <%= @user.email %> </p>
+    </div>
+    <div class="pl-3 py-0 d-flex align-items-center">
+      <i class="fas fa-phone-alt"></i>
+      <p class="m-0 pl-2"> <%= @user.phone_number %> </p>
+    </div>
+    <div class="pl-3 py-0 d-flex align-items-center">
+      <i class="fas fa-map-marker-alt"></i>
+      <p class="m-0 pl-2"> <%= @user.address %> </p>
+    </div>
+  </div>
   <div>
-    <div class="py-4 border-top d-flex align-items-center">
+    <div class="pl-3 py-4 border-top d-flex align-items-center">
       <i class="fas fa-dollar-sign pr-4" style="font-size: 36px;"></i>
       <div>
-        <p class="m-0"> <strong> Prix proposé : </strong> </p>
+        <h5 class="m-0"> <strong> Prix proposé : </strong> </h5>
         <p class="m-0"> <%= @offer.price %> </p>
       </div>
     </div>
     <div class="py-4 border-top d-flex align-items-center">
       <i class="fas fa-tag pr-4" style="font-size: 36px;"></i>
       <div>
-        <p class="m-0"> <strong> Catégorie : </strong> </p>
+        <h5 class="m-0"> <strong> Catégorie : </strong> </h5>
         <p class="m-0"> <%= @offer.category %> </p>
       </div>
     </div>
     <div class="py-4 border-top d-flex align-items-center">
       <i class="fas fa-utensils pr-4" style="font-size: 36px;"></i>
       <div>
-        <p class="m-0"> <strong> Description : </strong> </p>
+        <h5 class="m-0"> <strong> Description : </strong> </h5>
         <p class="m-0"> <%= @offer.description %> </p>
       </div>
     </div>
@@ -36,11 +50,24 @@
       <div class="d-flex align-items-center">
         <i class="fas fa-calendar-alt pr-4" style="font-size: 36px;"></i>
         <div>
-          <p class="m-0"> <strong> Repas proposé le : </strong> </p>
+          <h5 class="m-0"> <strong> Repas proposé le : </strong> </h5>
           <p class="m-0"> <%= @offer.date %> </p>
         </div>
       </div>
-      <button type="button" class="btn btn-dark btn-lg">Réserver</button>
+
+      <%# ajouter la méthode 'Swal.fire' dans un fichier javascipt par la suite %>
+      <%# <%= link_to 'Réserver', offer_path(@offer), class:"btn btn-dark btn-lg", data: { confirm: "Votre demande de réservation a bien été envoyée" } %>
+      <button type="button" class="btn btn-dark btn-lg" onclick ="Swal.fire({
+          position: 'middle',
+          icon: 'success',
+          title: 'Bon appétit ! 😋',
+          text: 'Votre demande de confirmation a été envoyée.',
+          showConfirmButton: false,
+          timer: 1500
+        })">Réserver</button>
     </div>
   </div>
 </div>
+
+<%# lien à Sweetalert à ajouter dans un fichier javascipt par la suite %>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

@@ -1,12 +1,14 @@
 class OffersController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
-  before_action :set_offer, only: [ :show, :edit, :update, :destroy ]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_offer, only: [:show, :edit, :update, :destroy]
   
   def index
     @offers = Offer.all
   end
 
   def show
+    @offer = Offer.find(params[:id])
+    @user = @offer.user
   end
 
   def new
