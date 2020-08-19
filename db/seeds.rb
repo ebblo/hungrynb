@@ -17,7 +17,7 @@ puts "Start seeding"
 
 test_user = User.new(email: 'john.doe@gmail.com', password: '123456', first_name: 'John', last_name: 'Doe', address: 'Rte du Lac, Nyon', phone_number: '0792655478')
 test_user.save
-10.times do
+100.times do
   my_user = User.new(email: Faker::Internet.email, 
                     password: "123456",
                     first_name: Faker::Name.first_name,
