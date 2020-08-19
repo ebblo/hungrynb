@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "faker"
+require "open-uri"
 
 puts "Deleting old seeds"
 Booking.destroy_all
@@ -14,10 +15,8 @@ User.destroy_all
 
 puts "Start seeding"
 
-# test user
 test_user = User.new(email: 'john.doe@gmail.com', password: '123456', first_name: 'John', last_name: 'Doe', address: 'Rte du Lac, Nyon', phone_number: '0792655478')
 test_user.save
-
 10.times do
   my_user = User.new(email: Faker::Internet.email, 
                     password: "123456",
@@ -27,14 +26,16 @@ test_user.save
                     phone_number: Faker::PhoneNumber.cell_phone
                   )
   my_user.save!
+
   my_offer = Offer.new(title: Faker::Food.dish, 
     price: rand(10..30), 
     category: Offer::CATEGORIES.sample(), 
     description: "miam c'est bon", 
-    date: "2020/05/16")
+    date: "2020/05/16"
+  )
+  # my_offer.photo.attach(io: pictures.sample, filename: "picture.png", content_type: "image/jpeg")
   my_offer.user = my_user
   my_offer.save!
 end
-
 puts "Seeding done"
 
