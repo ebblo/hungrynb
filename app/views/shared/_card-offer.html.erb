@@ -4,7 +4,7 @@
   <% if offer.photo.attached? %>
     <%= cl_image_tag offer.photo.key, crop: :fill, class: "card-offer-img" %>
   <% else %>
-    <%= image_tag("https://res.cloudinary.com/kyulol/image/upload/v1597399204/samples/animals/kitten-playing.gif", 
+    <%= image_tag("https://source.unsplash.com/collection/251966", 
       crop: :fill, class: "card-offer-img") %>
   <% end %>
 
