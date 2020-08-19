@@ -1,0 +1,22 @@
+<h1><%= "Dashboard" %></h1>
+<br>
+
+<h2><%= "Bookings" %></h2>
+<% @bookings.each do |booking| %>
+  <ul>
+    <li><%= booking.offer.title %></li>
+    <%= link_to "Cancel booking", booking_path(booking), method: :delete, class: "btn btn-danger" %>
+  </ul>
+<% end %>
+<br>
+
+<h2><%= "Offers" %></h2>
+<%= link_to "Add new offer", new_offer_path, class:"btn btn-secondary" %>
+<% @offers.each do |offer| %>
+  <ul>
+    <li><%= offer.title %></li>
+    <%= link_to "Show offer", offer_path(offer), class: "btn btn-primary" %>
+    <%= link_to "Edit offer", edit_offer_path(offer), class: "btn btn-warning" %>
+    <%= link_to "Cancel offer", offer_path(offer), method: :delete, class: "btn btn-danger" %>
+  </ul>
+<% end %>
