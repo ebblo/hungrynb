@@ -7,5 +7,6 @@
   <%= f.input :category, collection: Offer::CATEGORIES %>
   <%= f.input :description %>
   <%= f.input :date %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Edit offer", class: "btn btn-primary" %>
 <% end %>
