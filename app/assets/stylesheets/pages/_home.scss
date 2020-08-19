@@ -30,11 +30,19 @@ body{
 .card-home{
   min-height: 710px;
 }
-.card-home-img{
+.bg-img-card-home.italia{
+  background: url("https://res.cloudinary.com/kyulol/image/upload/v1597840686/pizza_e0sxg5.jpg");
+}
+.bg-img-card-home.asia{
+  background: url("https://cdn.pixabay.com/photo/2015/11/19/10/38/food-1050813_960_720.jpg");
+}
+
+.italia, .asia{
   width: 100%;
   height: 400px;
-  object-fit: cover;
-  object-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .card-home-body{
   height: 310px;
