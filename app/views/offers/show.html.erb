@@ -47,7 +47,16 @@
         </div>
       </div>
       <%= link_to 'Réserver', offer_path(@offer), class:"btn btn-dark btn-lg", data: { confirm: "Votre demande de réservation a bien été envoyée" } %>
+      <button type="button" class="btn btn-dark btn-lg" onclick ="Swal.fire({
+          position: 'middle',
+          icon: 'success',
+          title: 'Bon appétit ! 😋',
+          text: 'Votre demande de confirmation a été envoyée.',
+          showConfirmButton: false,
+          timer: 1500
+        })">Réserver</button>
     </div>
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
