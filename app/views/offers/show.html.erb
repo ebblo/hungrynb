@@ -2,7 +2,7 @@
   <% if @offer.photo.attached? %>
     <%= cl_image_tag @offer.photo.key, crop: :fill, class: "shadow-lg p-3 mb-5 w-100 card-offer-img-big" %>
   <% else %>
-    <img class="w-100 circle shadow-lg mb-5" src="https://www.englishclub.com/images/vocabulary/food/italian/italian-food-640.jpg" alt="italian food">
+    <img class="w-100 circle shadow-lg mb-3" src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="italian food">
   <% end %>
   
   <div class="pt-4 d-flex justify-content-between align-items-center">
@@ -39,14 +39,14 @@
         <p class="m-0"> <%= @offer.category %> </p>
       </div>
     </div>
-    <div class="py-4 border-top d-flex align-items-center">
+    <div class="pl-2 py-4 border-top d-flex align-items-center">
       <i class="fas fa-utensils pr-4" style="font-size: 36px;"></i>
       <div>
         <h5 class="m-0"> <strong> Description : </strong> </h5>
         <p class="m-0"> <%= @offer.description %> </p>
       </div>
     </div>
-    <div class="py-4 border-top d-flex justify-content-between align-items-center">
+    <div class="pl-2 py-4 border-top d-flex justify-content-between align-items-center">
       <div class="d-flex align-items-center">
         <i class="fas fa-calendar-alt pr-4" style="font-size: 36px;"></i>
         <div>
