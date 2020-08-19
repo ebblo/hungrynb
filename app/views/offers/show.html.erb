@@ -46,6 +46,8 @@
           <p class="m-0"> <%= @offer.date %> </p>
         </div>
       </div>
+
+      <%# ajouter la méthode 'Swal.fire' dans un fichier javascipt par la suite %>
       <%= link_to 'Réserver', offer_path(@offer), class:"btn btn-dark btn-lg", data: { confirm: "Votre demande de réservation a bien été envoyée" } %>
       <button type="button" class="btn btn-dark btn-lg" onclick ="Swal.fire({
           position: 'middle',
@@ -59,4 +61,5 @@
   </div>
 </div>
 
+<%# lien à Sweetalert à ajouter dans un fichier javascipt par la suite %>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
