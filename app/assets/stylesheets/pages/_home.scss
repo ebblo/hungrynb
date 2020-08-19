@@ -28,7 +28,7 @@ body{
 }
 
 .card-home{
-  min-height: 710px;
+  // min-height: 710px;
 }
 .bg-img-card-home.italia{
   background: url("https://res.cloudinary.com/kyulol/image/upload/v1597840686/pizza_e0sxg5.jpg");
@@ -50,4 +50,23 @@ body{
 
 .tag-category{
   border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .container-search-bar{
+    height: 105px;
+    // border-radius: 10px;
+  }
+  .search-left{
+    border-radius: 10px 0 0 10px;
+  }
+  .search-right{
+    border-radius: 0 10px 10px 0;
+  }
+  .italia, .asia{
+    height: 230px;
+  }
+  .card-home-body{
+    font-size: 15px;
+  }
 }

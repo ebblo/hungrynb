@@ -6,15 +6,16 @@
       <h1 class="text-white">Travel and enjoy all the homemade plates all around the world and eat with a new family avery day</h1>
     </div>
     <div class="container">
-      <div class="d-none container-search-bar bg-white d-md-flex align-items-center px-2">
-        <div class="input-group d-flex align-items-center">
 
+      <%# searchbar on desktop %>
+      <div class="container-search-bar bg-white d-none d-md-flex align-items-center px-2">
+        <div class="input-group d-flex align-items-center">
           <div class="input-group-prepend d-flex align-items-center">
             <input class="form-control border-right-0" id="whereNext" type="search" placeholder="Where to next ?" aria-label="Search">
             <label for="whereNext" class="d-flex align-items-center m-0"><i class="fal fa-search icons-in-search-bar border-top border-bottom border-right-0 border-left-0 pr-2"></i></label>
           </div>
-
-          <input class="form-control border-right-0" id="arrival" type="date" placeholder="Arrival" aria-label="date">
+            
+          <input class="form-control border-right-0" value="?" id="arrival" type="date" placeholder="Arrival" aria-label="date">
           
           <input class="form-control border-right-0" type="date" id="departure" placeholder="Departure" aria-label="date">
                     
@@ -23,11 +24,30 @@
           </div>
         </div>
       </div>
+
+      <%# searchbar on responsive %>
+      <div class="container-search-bar bg-white rounded pt-3 d-flex flex-column justify-content-center d-md-none align-items-center">
+      <form>
+        <div class="input-group mb-3">
+          <input type="date" class="form-control search-left" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          <input type="date" class="form-control search-right" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <input type="search" class="form-control search-left" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+          <div class="input-group-append">
+            <%= link_to "See offers", offers_path, class:"btn btn-outline-secondary border btn-search-bar", id: "btn-search-bar" %>
+          </div>
+        </div>
+        </form>
+
+      </div>
+
+
     </div>
   </div>
 
   <div class="container d-flex justify-content-center my-5 flex-wrap">
-    <div class="card-home col-10 col-lg-5 mx-2 p-0 bg-white shadow-sm">
+    <div class="card-home col-10 col-lg-5 m-2 p-0 bg-white shadow-sm">
     <div class="bg-img-card-home asia"></div>
       <div class="card-home-body border p-4 text-center">
         <span class="bg-primary py-1 px-3 tag-category text-white">Asian</span>
@@ -39,7 +59,7 @@
         </div>
       </div>
     </div>
-    <div class="card-home col-10 col-lg-5 mx-2 p-0 bg-white shadow-sm">
+    <div class="card-home col-10 col-lg-5 m-4 p-0 bg-white shadow-sm">
     <div class="bg-img-card-home italia"></div>
       <div class="card-home-body border p-4 text-center">
         <span class="bg-primary py-1 px-3 tag-category text-white">Italian</span>
