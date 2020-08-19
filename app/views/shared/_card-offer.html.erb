@@ -1,8 +1,12 @@
 
 <div class="card-offer border shadow p-0">
 
-  <%= image_tag("https://res.cloudinary.com/kyulol/image/upload/v1597399204/samples/animals/kitten-playing.gif", 
-  crop: :fill, class: "card-offer-img") %>
+  <% if offer.photo.attached? %>
+    <%= cl_image_tag offer.photo.key, crop: :fill, class: "card-offer-img" %>
+  <% else %>
+    <%= image_tag("https://res.cloudinary.com/kyulol/image/upload/v1597399204/samples/animals/kitten-playing.gif", 
+      crop: :fill, class: "card-offer-img") %>
+  <% end %>
 
   <div class="card-offer-body p-4">
     <h5><%= offer.title %></h5>
