@@ -10,3 +10,11 @@ a{
     color: black;
   }
 }
+
+@media (max-width: 768px) {
+  .banner-home div h1{
+    background: #0a0a0a26;
+    font-size: 1.6em;
+  }
+}
+
