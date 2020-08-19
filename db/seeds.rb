@@ -17,7 +17,13 @@ User.destroy_all
 puts "Start seeding"
 
 10.times do
-  my_user = User.new(email: Faker::Internet.email, password: "123456")
+  my_user = User.new(email: Faker::Internet.email, 
+                    password: "123456",
+                    first_name: Faker::Name.first_name,
+                    last_name: Faker::Name.last_name,
+                    address: Faker::Address.city,
+                    phone_number: Faker::PhoneNumber.cell_phone
+                  )
   my_user.save!
   my_offer = Offer.new(title: Faker::Food.dish, 
     price: rand(10..30), 
