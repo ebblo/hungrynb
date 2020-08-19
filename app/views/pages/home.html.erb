@@ -6,7 +6,7 @@
       <h1 class="text-white">Travel and enjoy all the homemade plates all around the world and eat with a new family avery day</h1>
     </div>
     <div class="container">
-      <div class="container-search-bar bg-white d-flex align-items-center px-2">
+      <div class="d-none container-search-bar bg-white d-md-flex align-items-center px-2">
         <div class="input-group d-flex align-items-center">
 
           <div class="input-group-prepend d-flex align-items-center">
@@ -14,22 +14,20 @@
             <label for="whereNext" class="d-flex align-items-center m-0"><i class="fal fa-search icons-in-search-bar border-top border-bottom border-right-0 border-left-0 pr-2"></i></label>
           </div>
 
-          <input class="form-control border-right-0" id="arrival" type="search" placeholder="Arrival" aria-label="Search">
-          <label for="arrival" class="d-flex align-items-center m-0"><i class="far fa-calendar-alt icons-in-search-bar border-top border-bottom border-right-0 border-left-0 pr-2"></i></label>
+          <input class="form-control border-right-0" id="arrival" type="date" placeholder="Arrival" aria-label="date">
           
-          <input class="form-control border-right-0" type="search" id="departure" placeholder="Departure" aria-label="Search">
-          <label for="departure" class="d-flex align-items-center m-0"><i class="fad fa-calendar-alt icons-in-search-bar border-top border-bottom border-right-0 border-left-0 pr-2"></i></label>
-          
+          <input class="form-control border-right-0" type="date" id="departure" placeholder="Departure" aria-label="date">
+                    
           <div class="input-group-append">
-            <button class="btn btn-outline-secondary border" type="button" id="button-addon2">Button</button>
+            <%= link_to "See our offers !", offers_path, class:"btn btn-outline-secondary border btn-search-bar", id: "btn-search-bar" %>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container d-flex justify-content-center my-5">
-    <div class="card-home col-10 col-md-5 mx-2 p-0 bg-white shadow-sm">
+  <div class="container d-flex justify-content-center my-5 flex-wrap">
+    <div class="card-home col-10 col-lg-5 m-2 p-0 bg-white shadow-sm">
       <img src="https://cdn.pixabay.com/photo/2020/07/22/09/42/muffins-5428598_960_720.jpg" class="card-home-img" 
       alt="">
       <div class="card-home-body border p-4 text-center">
@@ -42,7 +40,7 @@
         </div>
       </div>
     </div>
-    <div class="card-home col-10 col-md-5 mx-2 p-0 bg-white shadow-sm">
+    <div class="card-home col-10 col-lg-5 mx-2 p-0 bg-white shadow-sm">
       <img src="https://cdn.pixabay.com/photo/2015/11/19/10/38/food-1050813_960_720.jpg" class="card-home-img" alt="">
       <div class="card-home-body border p-4 text-center">
         <span class="bg-primary py-1 px-3 tag-category text-white">Italian</span>
