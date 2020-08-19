@@ -37,6 +37,7 @@ gem 'devise'
 
 gem 'cloudinary', '~> 1.12.0'
 
+gem 'geocoder'
 
 
 group :development, :test do
