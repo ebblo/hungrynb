@@ -25,13 +25,14 @@
             <%# </div>
           </div>
         </form>         %>
+
         
         <%= form_tag offers_path, method: :get do %>
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
             placeholder: "Find a movie"
-          %>
+          %>       
           <%= date_field_tag :start_date,
             params[:start_date]
           %>
@@ -39,7 +40,7 @@
             params[:end_date]
           %>
           <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>
+        <% end %>        
       </div>
 
       <%# searchbar on responsive %>
