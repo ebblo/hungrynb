@@ -1,19 +1,33 @@
-
-<div class="card-offer p-0">
+<%# ---------------------card--------------------- %>
+<div class="card-offer">
 
   <% if offer.photo.attached? %>
-    <%= cl_image_tag offer.photo.key, crop: :fill, class: "card-offer-img" %>
+    <div class="card-offer-img" style="background: url(<%= url_for(offer.photo) %>);">
+      <% if offer.user == current_user && params[:controller] == 'pages' %>
+        <%= link_to offer_path(offer), method: :delete, class: "card-btn-delete float-right m-2" do %>
+          <%= cl_image_tag 'https://res.cloudinary.com/kyulol/image/upload/v1597949378/delete-cross_unytdj.svg', class:"delete-icon" %>
+        <% end %> 
+      <% end %>
+      <p class="rounded-form px-3 py-1 card-btn-category text-white"><%= offer.category %></p>
+    </div>
   <% else %>
-    <%= image_tag("https://images.unsplash.com/photo-1471478108131-9b2335c21611?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80", 
-      crop: :fill, class: "card-offer-img") %>
+    <div class="card-offer-img" style="background: url(https://picsum.photos/1000/600);">
+      <p class="rounded-form px-3 py-1 card-btn-category text-white"><%= offer.category %></p>
+    </div>
   <% end %>
 
-  <div class="card-offer-body p-4 shadow-lg">
+  <div class="card-offer-body p-4">
     <h5><%= offer.title %></h5>
     <div class="d-flex justify-content-between">
-      <p class="card-offer-tag px-2 py-1 bg-dark text-white rounded"><%= offer.category %></p>
+      
       <span><%= offer.price %> €</span>
     </div>
     <span><%= offer.date %></span>
   </div>
-</div>
+  <% if offer.user == current_user && params[:controller] == 'pages' %>
+    <div class="card-footer bg-white border-0 py-3">
+          <%= link_to "Show offer", offer_path(offer), class: "rounded-form px-3 py-1 btn card-btn-show" %>
+          <%= link_to "Edit offer", edit_offer_path(offer), class: "rounded-form px-3 py-1 btn card-btn-edit" %>
+    </div>
+  <% end %>
+  </div>
