@@ -25,3 +25,10 @@ label.myLabel input[type="file"] {
   width: 60px;
 }
 
+.myLabel :invalid + p {
+  color: #A44;
+}
+.myLabel :valid + p {
+  color: #4A4;
+}
+
