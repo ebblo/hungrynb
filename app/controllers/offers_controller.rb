@@ -28,7 +28,7 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
     @user = current_user
     @offer.user = @user
-    if @offer.save!
+    if @offer.save
       redirect_to offer_path(@offer)
     else
       render 'new'
