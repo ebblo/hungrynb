@@ -1,13 +1,25 @@
-<div id="new">
-  <h1 id="add-offer">Ajouter une offre</h1>
+<%# ----------------------CREATE A NEW OFFER---------------------- %>
 
-  <%= simple_form_for @offer do |f| %>
-    <%= f.input :title %>
-    <%= f.input :price %>
-    <%= f.input :category, collection: Offer::CATEGORIES %>
-    <%= f.input :description %>
-    <%= f.input :date %>
-    <%= f.input :photo, as: :file %>
-    <%= f.button :submit, value: 'Créer mon offre', id: 'submit-color' %>
-  <% end %>
-</div>
+  <div class="container d-flex flex-column align-items-center">
+  <h1>Créer une offre</h1>
+    <div class="col-8">
+
+        <%= simple_form_for @offer, class:"log-in-form" do |f| %>
+          <%= f.input :title %>
+          <%= f.input :price %>
+          <%= f.input :category, collection: Offer::CATEGORIES %>
+          <%= f.input :description %>
+          <%= f.input :date %>
+          <div  class="d-flex justify-content-between align-items-center">
+            <label class="myLabel d-flex flex-column align-items-center">
+              <%= image_tag "https://res.cloudinary.com/kyulol/image/upload/v1597917662/png-logo-empty_t6glo8.png", class:"img-input-file" %>
+              <%= f.file_field :photo, as: :file, class:"btn-file-input d-none" %>
+              <p>Ajouter une image</p>
+            </label>
+            
+            <%= f.button :submit, value: 'Créer mon offre', id: 'submit-color' %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
