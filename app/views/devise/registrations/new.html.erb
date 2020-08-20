@@ -1,19 +1,26 @@
-SIGNUP
+<%# -------------------------SIGNUP------------------------- %>
 <div class="container d-flex flex-column align-items-center">
+  <h2>Sign up</h2>
   <div class="col-8">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs log-in-form">
-        <%= f.input :email,
+        <%= f.input :email, label: 'Email', placeholder: "caroline.carlier@exemple.com",
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
+                    input_html: { autocomplete: "Votre email" } %>
+        <%= f.input :first_name, label: 'Votre prénom', placeholder: "Caroline",
+                    input_html: { autocomplete: 'address' } %>
+        <%= f.input :last_name, label: 'Votre nom', placeholder: "Carlier",
+                    input_html: { autocomplete: 'address' } %>
+        <%= f.input :address, label: 'Votre addresse', placeholder: "1 Rue des Trois Frères, 75018 Paris, France",
+                    input_html: { autocomplete: 'address' } %>
+        <%= f.input :password, label: 'Votre Mot-de-Passe', placeholder: "••••••",
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
+        <%= f.input :password_confirmation, label: 'Confirmer votre mot-de-passe', placeholder: "••••••",
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
       </div>
@@ -29,4 +36,3 @@ SIGNUP
     <%= render "devise/shared/links" %>
   </div>
 </div>
-

@@ -4,6 +4,16 @@ class OffersController < ApplicationController
   
   def index
     @offers = Offer.all
+    @users = User.geocoded # returns users with coordinates
+
+    @markers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { user: user }),
+        image_url: helpers.asset_url('/Users/loicebbing/code/ebblo/rbnb/app/assets/images/pasta.jpg')
+      }
+    end
   end
 
   def show
