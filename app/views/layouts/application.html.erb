@@ -16,12 +16,9 @@
 
   <body class="d-flex flex-column">
     <%= render  "shared/navbar" %>
-
-    <p class="notice m-0"><%= notice %></p>
-    <p class="alert m-0"><%= alert %></p>
+    <%= render 'shared/flashes' %>
     <%= yield %>
 
     <%= render  "shared/footer" %>
-    <%= render 'shared/flashes' %>
   </body>
 </html>
