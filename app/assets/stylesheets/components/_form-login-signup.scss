@@ -4,9 +4,24 @@
 .rounded-form{
   border-radius: 25px
 }
-.log-in-form input{
-  border-radius: 25px
+#new_offer input,
+#new_offer select,
+#nex-offer button{
+  border-radius: 25px;
+  height: calc(1.5em + 0.75rem + 2px);;
 }
 img.btn-arrow {
   width: 29px;
 }
+
+label.myLabel input[type="file"] {
+  position:absolute;
+  top: -1000px;
+}
+.myLabel{
+  cursor: pointer;
+}
+.img-input-file{
+  width: 60px;
+}
+
