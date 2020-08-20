@@ -2,14 +2,21 @@
 <br>
 
 <div class="container container-sm-fluid bg-transparent d-flex flex-column align-items-center">
-  <div class="row justify-content-md-around justify-content-center flex-wrap rounded">
+  <div class="row justify-content-md-around justify-content-center flex-wrap">
     <% @offers.each do |offer| %>
       <%= link_to offer_path(offer), class: "col-10 col-md-5 col-lg-3 m-2 mx-md-0 " do %>
         <%= render  "shared/card-offer", offer: offer %>
       <% end %>
     <% end %>
-    </div>   
+  </div>
+  <div class="mx-auto my-5 bg w-100">
+    <% if user_signed_in? %>
+      <%= link_to "Add new offer", new_offer_path, class:"btn btn-secondary btn-lg btn-block" %>
+    <% end %> 
+  </div>
+  <div id="map"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
-
-
-

@@ -5,15 +5,21 @@
       <%= f.error_notification %>
 
       <div class="form-inputs log-in-form">
-        <%= f.input :email,
+        <%= f.input :email, placeholder: "Votre email",
                     required: true,
                     autofocus: true,
                     input_html: { autocomplete: "email" }%>
-        <%= f.input :password,
+        <%= f.input :first_name, placeholder: "Votre prénom",
+                    input_html: { autocomplete: 'address' } %>
+        <%= f.input :last_name, placeholder: "Votre nom",
+                    input_html: { autocomplete: 'address' } %>
+        <%= f.input :address, placeholder: "Votre adresse",
+                    input_html: { autocomplete: 'address' } %>
+        <%= f.input :password, placeholder: "••••••",
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                     input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
+        <%= f.input :password_confirmation, placeholder: "••••••",
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
       </div>
@@ -29,4 +35,3 @@
     <%= render "devise/shared/links" %>
   </div>
 </div>
-

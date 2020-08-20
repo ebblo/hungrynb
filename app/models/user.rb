@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   has_many :offers, dependent: :destroy
   has_many :bookings, dependent: :destroy
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   ### access offers as a guest: @user.bookings[index].offers ("through" path removed, so you have to access it via bookings first)
   ### access offers as a host:  @user.offers
 
