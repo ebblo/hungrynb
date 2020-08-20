@@ -3,8 +3,44 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
   
   def index
-    @offers = Offer.all
-    @users = User.geocoded # returns users with coordinates
+    
+    if params[:query].present?
+      sql_query = "users.address ILIKE :query AND offers.date >= :start_date AND offers.date <= :end_date"
+      @offers = Offer.joins(:user).where(sql_query, query: "%#{params[:query]}%", start_date: params[:start_date], end_date: params[:end_date])
+      
+      # @users_selected = User.joins(:offer).where(sql_query, query: "%#{params[:query]}%", start_date: params[:start_date], end_date: params[:end_date])
+      # @users = @users_selected.geocoded # returns users with coordinates
+
+      @markers = @offers.map do |offer|
+        {
+          lat: offer.user.latitude,
+          lng: offer.user.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { user: offer.user }),
+          image_url: helpers.asset_url('/Users/loicebbing/code/ebblo/rbnb/app/assets/images/pasta.jpg')
+        }
+      end
+    else
+      @offers = Offer.all
+    end
+      
+
+    # @users = User.geocoded # returns users with coordinates
+
+    # @markers = @users.map do |user|
+    #   {
+    #     lat: user.latitude,
+    #     lng: user.longitude,
+    #     infoWindow: render_to_string(partial: "info_window", locals: { user: user }),
+    #     image_url: helpers.asset_url('/Users/loicebbing/code/ebblo/rbnb/app/assets/images/pasta.jpg')
+    #   }
+    # end
+  end
+
+  def show
+    @user = @offer.user
+    @users = User.geocoded # returns user with coordinates
+
+    ############ MARKES POUR TOUS LES USERS ############ A CHANGER
 
     @markers = @users.map do |user|
       {
@@ -14,10 +50,6 @@ class OffersController < ApplicationController
         image_url: helpers.asset_url('/Users/loicebbing/code/ebblo/rbnb/app/assets/images/pasta.jpg')
       }
     end
-  end
-
-  def show
-    @user = @offer.user
   end
 
   def new
