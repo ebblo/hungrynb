@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # debugger for the map user adress conflict in the sign up step
+  config.log_level = :debug
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
