@@ -18,6 +18,18 @@ class OffersController < ApplicationController
 
   def show
     @user = @offer.user
+    @users = User.geocoded # returns user with coordinates
+
+    ############ MARKES POUR TOUS LES USERS ############ A CHANGER
+
+    @markers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { user: user }),
+        image_url: helpers.asset_url('/Users/loicebbing/code/ebblo/rbnb/app/assets/images/pasta.jpg')
+      }
+    end
   end
 
   def new
