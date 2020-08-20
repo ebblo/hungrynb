@@ -21,10 +21,7 @@ class OffersController < ApplicationController
 
   def show
     @user = @offer.user
-    @users = User.geocoded # returns user with coordinates
-
-    ############ MARKES POUR TOUS LES USERS ############ A CHANGER
-
+    @users = [@user]
     @markers = @users.map do |user|
       {
         lat: user.latitude,
