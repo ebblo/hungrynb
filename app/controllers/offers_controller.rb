@@ -7,7 +7,6 @@ class OffersController < ApplicationController
   end
 
   def show
-    @offer = Offer.find(params[:id])
     @user = @offer.user
   end
 
@@ -39,7 +38,7 @@ class OffersController < ApplicationController
 
   def destroy
     @offer.destroy
-    redirect_to offers_path
+    redirect_to dashboard_path
   end
 
   private

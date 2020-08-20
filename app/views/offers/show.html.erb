@@ -59,14 +59,15 @@
 
       <%# ajouter la méthode 'Swal.fire' dans un fichier javascipt par la suite %>
       <%# <%= link_to 'Réserver', offer_path(@offer), class:"btn btn-dark btn-lg", data: { confirm: "Votre demande de réservation a bien été envoyée" } %>
-      <button type="button" class="btn btn-dark btn-lg" onclick ="Swal.fire({
-          position: 'middle',
-          icon: 'success',
-          title: 'Bon appétit ! 😋',
-          text: 'Votre demande de confirmation a été envoyée.',
-          showConfirmButton: false,
-          timer: 1500
-        })">Réserver</button>
+      <%= link_to "Réserver", offer_bookings_path(@offer), class:"btn btn-dark btn-lg", method: :post, :onclick => "Swal.fire({
+            position: 'middle',
+            icon: 'success',
+            title: 'Bon appétit ! 😋',
+            text: 'Votre demande de confirmation a été envoyée.',
+            showConfirmButton: false,
+            timer: 1500
+          })"	 
+          %>
     </div>
   </div>
 </div>
