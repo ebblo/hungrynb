@@ -1,22 +1,22 @@
-<h1><%= "Dashboard" %></h1>
+<h1><%= "Mon compte" %></h1>
 <br>
 
-<h2><%= "Bookings" %></h2>
+<h2><%= "Mes réservations" %></h2>
 <% @bookings.each do |booking| %>
   <ul>
     <li><%= booking.offer.title %></li>
-    <%= link_to "Cancel booking", booking_path(booking), method: :delete, class: "btn btn-danger" %>
+    <%= link_to "Annuler une réservation", booking_path(booking), method: :delete, class: "btn btn-danger" %>
   </ul>
 <% end %>
 <br>
 
-<h2><%= "Offers" %></h2>
-<%= link_to "Add new offer", new_offer_path, class:"btn btn-secondary" %>
+<h2><%= "Mes menus" %></h2>
+<%= link_to "Ajouter un menu", new_offer_path, class:"btn btn-secondary" %>
 <% @offers.each do |offer| %>
   <ul>
     <li><%= offer.title %></li>
-    <%= link_to "Show offer", offer_path(offer), class: "btn btn-primary" %>
-    <%= link_to "Edit offer", edit_offer_path(offer), class: "btn btn-warning" %>
-    <%= link_to "Cancel offer", offer_path(offer), method: :delete, class: "btn btn-danger" %>
+    <%= link_to "Montrer un menu", offer_path(offer), class: "btn btn-primary" %>
+    <%= link_to "Editer un menu", edit_offer_path(offer), class: "btn btn-warning" %>
+    <%= link_to "Supprimer un menu", offer_path(offer), method: :delete, class: "btn btn-danger" %>
   </ul>
 <% end %>

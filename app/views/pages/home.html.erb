@@ -3,7 +3,7 @@
   <%# BANNER %>
   <div class="banner-home bg-success d-flex flex-column justify-content-center align-items-center">
     <div class="container mb-5">
-      <h1 class="text-white">Travel and enjoy all the homemade plates all around the world and eat with a new family every day</h1>
+      <h1 class="text-white">Voyagez et découvrez les traditions culinaires locales, comme si vous étiez chez vous.</h1>
     </div>
     <div class="container">
 
@@ -30,8 +30,8 @@
         <%= form_tag offers_path, method: :get do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
-            placeholder: "Find a movie"
+            class: "form-control mt-1",
+            placeholder: "Trouver un hôte"
           %>       
           <%= date_field_tag :start_date,
             params[:start_date]
@@ -39,8 +39,8 @@
           <%= date_field_tag :end_date,
             params[:end_date]
           %>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
-        <% end %>        
+          <%= submit_tag "Rechercher", class: "btn btn-warning m-1" %>
+        <% end %>
       </div>
 
       <%# searchbar on responsive %>

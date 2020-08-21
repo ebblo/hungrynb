@@ -1,14 +1,14 @@
 <%# ----------------------CREATE A NEW OFFER---------------------- %>
 
   <div class="container d-flex flex-column align-items-center">
-  <h1>Créer une offre</h1>
+  <h1>Créer un menu</h1>
     <div class="col-8">
 
         <%= simple_form_for @offer, class:"log-in-form" do |f| %>
-          <%= f.input :title %>
-          <%= f.input :price %>
-          <%= f.input :category, collection: Offer::CATEGORIES %>
-          <%= f.input :description %>
+          <%= f.input :title, label: 'Titre' %>
+          <%= f.input :price, label: 'Prix' %>
+          <%= f.input :category, collection: Offer::CATEGORIES, label: 'Catégorie'  %>
+          <%= f.input :description, label: 'Description'  %>
           <%= f.input :date %>
           <div  class="d-flex justify-content-between align-items-center">
             <label class="myLabel d-flex flex-column align-items-center">
@@ -17,7 +17,7 @@
               <p>Ajouter une image</p>
             </label>
             
-            <%= f.button :submit, value: 'Créer mon offre', id: 'submit-color' %>
+            <%= f.button :submit, value: 'Créer mon menu', class: 'bg-warning text-white' %>
           </div>
         <% end %>
       </div>
