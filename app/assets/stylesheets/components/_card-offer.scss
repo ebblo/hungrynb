@@ -1,17 +1,57 @@
+$blue: #091F36;
+$orange: #FC8B00;
+$green: #CCD606;
+
 .card-offer{
   min-height: 350px;
-
+  border-radius: 30% 30% 0 0;
+  -webkit-box-shadow: 10px 10px 26px -20px rgba(252,139,0,0.24);
+  -moz-box-shadow: 10px 10px 26px -20px rgba(252,139,0,0.24);
+  box-shadow: 10px 10px 26px -20px rgba(252,139,0,0.24);
 }
 .card-offer-img{
-  object-fit: cover;
+  border-radius: 30% 30% 0 0;
+  height: 170px;
   width: 100%;
-  height: 200px;
-  border-radius: 30px 0px 0px 0px;
+  position: relative;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+.card-offer-body{
+  width: 100%;
 }
 
 .card-offer-img-big{
   object-fit: cover;
   width: 100%;
   height: 40vh;
+}
+.delete-icon{
+  width: 25px;
+  height: 25px;
+  
+}
+.card-btn-edit{
+  background: $orange;
+  color: white;
+  transition-duration: 0.7s;
+  &:hover {
+    color: $orange;
+    background: white;
+    border: 1px solid $orange;
+  }
+}
+.card-btn-show{
+  background: $blue;
+  color: white;
+}
+.card-btn-category{
+  background: $blue;
+  font-size: 10px;
+  width: fit-content;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
 }
 

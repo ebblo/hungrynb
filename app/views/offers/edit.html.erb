@@ -1,12 +1,9 @@
-<h1>Offers#edit</h1>
-<p>Find me in app/views/offers/edit.html.erb</p>
-
 <%= simple_form_for [ @offer ] do |f| %>
-  <%= f.input :title %>  
-  <%= f.input :price %>
-  <%= f.input :category, collection: Offer::CATEGORIES %>
-  <%= f.input :description %>
-  <%= f.input :date %>
+  <%= f.input :title, label: 'Titre' %>  
+  <%= f.input :price, label: 'Prix' %>
+  <%= f.input :category, collection: Offer::CATEGORIES, label: 'Catégorie' %>
+  <%= f.input :description, label: 'Description'%>
+  <%= f.input :date, label: 'Date' %>
   <%= f.input :photo, as: :file %>
-  <%= f.submit "Edit offer", class: "btn btn-primary" %>
+  <%= f.submit "Sauvegarder les modifications", class: "btn btn-warning" %>
 <% end %>

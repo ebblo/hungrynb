@@ -1,22 +1,57 @@
-<h1><%= "Dashboard" %></h1>
+<h1><%= "Mon compte" %></h1>
 <br>
 
 <h2><%= "Bookings" %></h2>
-<% @bookings.each do |booking| %>
-  <ul>
-    <li><%= booking.offer.title %></li>
-    <%= link_to "Cancel booking", booking_path(booking), method: :delete, class: "btn btn-danger" %>
-  </ul>
-<% end %>
-<br>
 
-<h2><%= "Offers" %></h2>
-<%= link_to "Add new offer", new_offer_path, class:"btn btn-secondary" %>
-<% @offers.each do |offer| %>
-  <ul>
-    <li><%= offer.title %></li>
-    <%= link_to "Show offer", offer_path(offer), class: "btn btn-primary" %>
-    <%= link_to "Edit offer", edit_offer_path(offer), class: "btn btn-warning" %>
-    <%= link_to "Cancel offer", offer_path(offer), method: :delete, class: "btn btn-danger" %>
+<%# ---------------------TEST TABS SYSTEM------------------------- %>
+
+<div class="container" id="container-dashboard">
+
+  <ul class="nav nav-tabs border-0" id="myTab" role="tablist">
+    <li class="nav-item col-4 m-0 p-0" role="presentation">
+      <a class="pt-4 text-center nav-link border-0 active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes repas</a>
+    </li>
+    <li class="nav-item col-4 m-0 p-0" role="presentation">
+      <a class="pt-4 text-center nav-link border-0" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ma selection de repas</a>
+    </li>
+    <li class="nav-item col-4 m-0 p-0" role="presentation">
+      <a class="pt-4 text-center nav-link border-0" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Profil</a>
+    </li>
   </ul>
-<% end %>
+
+<div class="tab-content" id="myTabContent">
+
+<%# ------------------1ere tabs----------------- %>
+  <div class="container tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+    <div class="row justify-content-md-around justify-content-between flex-wrap">
+
+      <% @offers.each do |offer| %>
+          <%= render  "shared/card-dashboard", offer: offer %>
+      <% end %>
+    
+    </div>
+
+  </div>
+
+<%# ------------------2eme tabs----------------- %>
+  <div class="container tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <%# < class=""><%= "Offers" %>
+    <div class="bg-dashboard row justify-content-between">
+    
+    <%#= link_to "Add new offer", new_offer_path, class:"btn btn-secondary" %>
+      
+      <% @bookings.each do |booking| %>
+          <%= render "shared/card_booked", booking: booking %>
+      <% end %>
+      
+    </div>
+
+  </div>
+
+  <%# ------------------3eme tabs----------------- %>
+    <div class="container tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3eme test
+    </div>
+  </div>
+
+</div>
