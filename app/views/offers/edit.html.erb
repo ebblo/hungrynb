@@ -1,9 +1,24 @@
-<%= simple_form_for [ @offer ] do |f| %>
-  <%= f.input :title, label: 'Titre' %>  
-  <%= f.input :price, label: 'Prix' %>
-  <%= f.input :category, collection: Offer::CATEGORIES, label: 'Catégorie' %>
-  <%= f.input :description, label: 'Description'%>
-  <%= f.input :date, label: 'Date' %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Sauvegarder les modifications", class: "btn btn-warning" %>
-<% end %>
+<div class="container d-flex flex-column align-items-center">
+  <div class="banner-edit bg-primary d-flex flex-column justify-content-center align-items-center mb-5">
+    <h1>Modifier un menu</h1>
+  </div>
+  <div class="col-8 form-edit-offer">
+    <%= simple_form_for [ @offer ], class:"log-in-form" do |f| %>
+    <%= f.input :title, label: 'Titre' %>  
+    <%= f.input :price, label: 'Prix' %>
+    <%= f.input :category, collection: Offer::CATEGORIES, label: 'Catégorie' %>
+    <%= f.input :description, label: 'Description'%>
+    <%= f.input :date, label: 'Date' %>
+    <div  class="d-flex justify-content-between align-items-center">
+      <label class="myLabel d-flex flex-column align-items-center">
+        <%= image_tag "https://res.cloudinary.com/kyulol/image/upload/v1597917662/png-logo-empty_t6glo8.png", class:"img-input-file" %>
+        <%= f.file_field :photo, as: :file, class:"btn-file-input d-none" %>
+        <p>Modifier une image</p>
+      </label>
+      
+      <%= f.button :submit, value: 'Créer mon menu', class: 'bg-warning text-white' %>
+    </div>
+    <%= f.submit "Sauvegarder les modifications", class: "btn btn-warning text-white" %>
+  <% end %>
+  </div>
+</div>
