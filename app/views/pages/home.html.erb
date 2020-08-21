@@ -8,7 +8,7 @@
     <div class="container">
 
       <%# searchbar on desktop %>
-      <div class="container-search-bar bg-white d-none d-md-flex align-items-center px-2">
+      <div class="container-search-bar bg-white d-none d-md-flex px-2 justify-content-center">
         <%# <form action="/offers" method="get">
           <div class="input-group d-flex align-items-center">
             <div class="input-group-prepend d-flex align-items-center">
@@ -26,20 +26,22 @@
           </div>
         </form>         %>
 
-        <%= form_tag offers_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control mt-1",
-            placeholder: "Trouver un hôte"
-          %>       
-          <%= date_field_tag :start_date,
-            params[:start_date]
-          %>
-          <%= date_field_tag :end_date,
-            params[:end_date]
-          %>
-          <%= submit_tag "Rechercher", class: "btn btn-warning m-1" %>
-        <% end %>
+        <div class="m-0">
+          <%= form_tag offers_path, method: :get do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control mt-1",
+              placeholder: "Trouver un hôte"
+            %>       
+            <%= date_field_tag :start_date,
+              params[:start_date]
+            %>
+            <%= date_field_tag :end_date,
+              params[:end_date]
+            %>
+            <%= submit_tag "Rechercher", class: "btn btn-warning m-1" %>
+          <% end %>
+        </div>
       </div>
 
       <%# searchbar on responsive %>
