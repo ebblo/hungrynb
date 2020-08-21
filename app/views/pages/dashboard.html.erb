@@ -1,8 +1,6 @@
-<h1><%= "Mon compte" %></h1>
-<br>
-
-<h2><%= "Bookings" %></h2>
-
+<div class="banner-dashboard bg-primary d-flex flex-column justify-content-center align-items-center mb-5">
+<h1>Mon compte</h1>
+</div>
 <%# ---------------------TEST TABS SYSTEM------------------------- %>
 
 <div class="container" id="container-dashboard">
@@ -12,7 +10,7 @@
       <a class="pt-4 text-center nav-link border-0 active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Mes repas</a>
     </li>
     <li class="nav-item col-4 m-0 p-0" role="presentation">
-      <a class="pt-4 text-center nav-link border-0" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ma selection de repas</a>
+      <a class="pt-4 text-center nav-link border-0" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Ma sélection de repas</a>
     </li>
     <li class="nav-item col-4 m-0 p-0" role="presentation">
       <a class="pt-4 text-center nav-link border-0" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Profil</a>
@@ -24,7 +22,7 @@
 <%# ------------------1ere tabs----------------- %>
   <div class="container tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-    <div class="row justify-content-md-around justify-content-between flex-wrap">
+    <div class="tab-pane-dashboard bg-dashboard row justify-content-around flex-wrap">
 
       <% @offers.each do |offer| %>
           <%= render  "shared/card-dashboard", offer: offer %>
@@ -37,7 +35,7 @@
 <%# ------------------2eme tabs----------------- %>
   <div class="container tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <%# < class=""><%= "Offers" %>
-    <div class="bg-dashboard row justify-content-between">
+    <div class="tab-pane-dashboard bg-dashboard row justify-content-around flex-wrap">
     
     <%#= link_to "Add new offer", new_offer_path, class:"btn btn-secondary" %>
       
@@ -51,6 +49,7 @@
 
   <%# ------------------3eme tabs----------------- %>
     <div class="container tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3eme test
+    <div class="tab-pane-dashboard bg-dashboard row justify-content-around flex-wrap"></div>
     </div>
   </div>
 
