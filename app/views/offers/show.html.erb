@@ -1,55 +1,60 @@
-<div class="container-fluid row justify-content-lg-center px-4 pt-4">
-  <div class="square col-5">
+  <div class="container-fluid d-flex flex-column align-items-center">
+    <div class="banner-edit w-75 bg-primary d-flex flex-column justify-content-center align-items-center my-5">
+      <h1>Menu séléctionné</h1>
+    </div>
+  </div>
+<div class="container-fluid row justify-content-lg-center px-4 pt-4 my-5 mx-3">
+  <div class="square col-6">
     <% if @offer.photo.attached? %>
       <%= cl_image_tag @offer.photo.key, crop: :fill, class: "shadow-lg p-3 mb-5 w-100 card-offer-img-big" %>
     <% else %>
       <img class="circle shadow-lg mb-3 img-fluid" src="https://images.unsplash.com/photo-1471478108131-9b2335c21611?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80" alt="italian food">
     <% end %>
   </div>
-  <div class="col-5">
+  <div class="col-6">
   <div class="pt-4 d-flex justify-content-between align-items-center">
     <h1 class="m-0" style="font-family: 'Playball', cursive; font-size: 68px;"><%= @offer.title %></h1>
-    <img class="rounded-circle" style="width: 75px; height: 75px; object-fit: cover;" src="https://static.skillshare.com/uploads/project/4c49440fec9b45c5464596033e0a23d7/ad168d89" alt="avatar user">
-  </div>
-  <div class="card pt-1 pb-2 pl-2 m-3 rounded" style="border: none">
-    <h4> Concocté par <strong> <%= @offer.user.first_name %> <%= @offer.user.last_name %></strong> </h4>
-    <div class="pl-3 py-0 d-flex align-items-center">
-      <i class="fas fa-envelope"></i>
-      <p class="m-0 pl-2"> <%= @offer.user.email %> </p>
-    </div>
-    <div class="pl-3 py-0 d-flex align-items-center">
-      <i class="fas fa-phone-alt"></i>
-      <p class="m-0 pl-2"> <%= @offer.user.phone_number %> </p>
-    </div>
-    <div class="pl-3 py-0 d-flex align-items-center">
-      <i class="fas fa-map-marker-alt"></i>
-      <p class="m-0 pl-2"> <%= @offer.user.address %> </p>
-    </div>
-  </div>
-  <div>
-    <div class="pl-3 py-4 border-top d-flex align-items-center">
-      <i class="fas fa-dollar-sign pr-4" style="font-size: 36px;"></i>
+    <div class="d-flex align-items-center">
+      <div class="mr-3">
+        <h4 class="text-right"><%= @offer.user.first_name %></h4>
+        <h4 class="text-right"><%= @offer.user.last_name %></h4>
+      </div>
       <div>
-        <h5 class="m-0"> <strong> Prix proposé : </strong> </h5>
-        <p class="m-0"> <%= @offer.price %> </p>
+        <img class="rounded-circle" style="width: 75px; height: 75px; object-fit: cover;" src="https://static.skillshare.com/uploads/project/4c49440fec9b45c5464596033e0a23d7/ad168d89" alt="avatar user">
       </div>
     </div>
-    <div class="py-4 border-top d-flex align-items-center">
+    
+  </div>
+  <div class="card pt-1 pb-2 pl-2 m-3 rounded" style="border: none">
+    
+  </div>
+  <div>
+    <div class="pl-3 py-4 border-top d-flex justify-content-around align-items-center" >
+      <div class="col-4 row">
+        <i class="fas fa-dollar-sign pr-4" style="font-size: 36px;"></i>
+        <div>
+          <h5 class="m-0"> <strong> Prix proposé : </strong> </h5>
+          <p class="m-0"> <%= @offer.price %> </p>
+        </div>
+      </div>
+      <div class="col-4 d-flex">
       <i class="fas fa-tag pr-4" style="font-size: 36px;"></i>
       <div>
         <h5 class="m-0"> <strong> Catégorie : </strong> </h5>
         <p class="m-0"> <%= @offer.category %> </p>
       </div>
     </div>
-    <div class="pl-2 py-4 border-top d-flex align-items-center">
+    </div>
+    <div class="pl-3 py-4 border-top d-flex justify-content-around align-items-center" >
+    <div class="col-4 row">
       <i class="fas fa-utensils pr-4" style="font-size: 36px;"></i>
       <div>
         <h5 class="m-0"> <strong> Description : </strong> </h5>
         <p class="m-0"> <%= @offer.description %> </p>
       </div>
     </div>
-    <div class="pl-2 py-4 border-top d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
+    
+      <div class="col-4 row">
         <i class="fas fa-calendar-alt pr-4" style="font-size: 36px;"></i>
         <div>
           <h5 class="m-0"> <strong> Repas proposé le : </strong> </h5>
@@ -72,29 +77,38 @@
   </div>
   </div>
 </div>
-<div class="container mt-3">
-  <div id="map"
-    style="width: 100%; height: 400px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+<div class="container-fluid d-flex">
+
+  <div  iv class="col-5 mt-3">
+    <div id="map"
+      style="width: 100%; height: 400px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
+
+<div class="col-7 d-flex justify-content-center">
+
+  <div class="container row justify-content-between">
+    <%= simple_form_for [ @offer, @review ], remote: true, class:"log-in-form col-6 row" do |f| %>
+      <%= f.input :content, label: "Laisser un avis" %>          
+      <div  class="d-flex justify-content-between align-items-center">            
+        <%= f.button :submit, value: 'Ajouter un avis', id: 'submit-color', class: "sumbit-show" %>
+      </div>
+    <% end %>
+
+    <div class="col-6">
+      <% @offer.reviews.each do |review| %>
+        <ul>
+          <li class="list-unstyled" id="review-<%= review.id %>"><%= review.content %></li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+  
 </div>
 
+</div>
 <%# lien à Sweetalert à ajouter dans un fichier javascipt par la suite %>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-
-
-<%= simple_form_for [ @offer, @review ], remote: true, class:"log-in-form" do |f| %>
-  <%= f.input :content %>          
-  <div  class="d-flex justify-content-between align-items-center">            
-    <%= f.button :submit, value: 'Ajouter un avis', id: 'submit-color' %>
-  </div>
-<% end %>
-
-<div>
-  <% @offer.reviews.each do |review| %>
-    <ul>
-      <li id="review-<%= review.id %>"><%= review.content %></li>
-    </ul>
-  <% end %>
-</div>
