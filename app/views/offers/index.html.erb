@@ -5,9 +5,7 @@
     <div class="col-6">
       <div class="row justify-content-md-around justify-content-center flex-wrap">
         <% @offers.each do |offer| %>
-          <%= link_to offer_path(offer), class: "col-10 col-md-3 col-lg- p-0 m-3 " do %>
-          <%= render  "shared/card-offer", offer: offer %>
-          <% end %>
+            <%= render  "shared/card-offer", offer: offer %>
         <% end %>
       </div>
     </div>

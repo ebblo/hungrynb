@@ -1,6 +1,5 @@
-<%# ---------------------card--------------------- %>
-<%= link_to offer_path(offer), class: "col-10 col-md-3 col-lg- p-0 m-3 " do %>
-  <div class="card-offer">
+<div class="card-offer col-10 col-md-3 col-lg- p-0 m-3">
+
     <% if offer.photo.attached? %>
       <div class="card-offer-img" style="background: url(<%= url_for(offer.photo) %>);">
         <% if offer.user == current_user && params[:controller] == 'pages' %>
@@ -31,4 +30,3 @@
       </div>
     <% end %>
   </div>
-<% end %>
