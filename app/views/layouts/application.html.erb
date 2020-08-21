@@ -14,11 +14,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body class="d-flex flex-column">
-    <%= render  "shared/navbar" %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-
+  <body>
+    <div class="container-fluid d-flex flex-column" id="main">
+      <%= render  "shared/navbar" %>
+      <%= render 'shared/flashes' %>
+      <%= yield %>
+    </div>
     <%= render  "shared/footer" %>
   </body>
 </html>

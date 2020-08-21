@@ -2,6 +2,10 @@ $blue: #091F36;
 $orange: #FC8B00;
 $green: #CCD606;
 
+.link-card-offer{
+  border-radius: 30% 30% 0 0;
+}
+
 .card-offer{
   min-height: 350px;
   border-radius: 30% 30% 0 0;
@@ -35,16 +39,24 @@ $green: #CCD606;
 .card-btn-edit{
   background: $orange;
   color: white;
+  border: 1px solid $orange;
   transition-duration: 0.7s;
   &:hover {
     color: $orange;
     background: white;
-    border: 1px solid $orange;
+    font-weight: bold;
   }
 }
 .card-btn-show{
   background: $blue;
   color: white;
+  transition-duration: 0.7s;
+  border: 1px solid $blue;
+  &:hover {
+    color: $blue;
+    background: white;
+    font-weight: bold;
+  }
 }
 .card-btn-category{
   background: $blue;

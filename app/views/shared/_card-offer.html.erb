@@ -1,5 +1,5 @@
 <%# ---------------------card--------------------- %>
-<%= link_to offer_path(offer), class: "col-10 col-md-3 col-lg- p-0 m-3 " do %>
+<%= link_to offer_path(offer), class: "link-card-offer border col-10 col-md-3 col-lg- p-0 m-3 " do %>
   <div class="card-offer">
     <% if offer.photo.attached? %>
       <div class="card-offer-img" style="background: url(<%= url_for(offer.photo) %>);">
@@ -16,7 +16,7 @@
       </div>
     <% end %>
 
-    <div class="card-offer-body p-4">
+    <div class="card-offer-body bg-white p-4">
       <h5><%= offer.title %></h5>
       <div class="d-flex justify-content-between">
         
