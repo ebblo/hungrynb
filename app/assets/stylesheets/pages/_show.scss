@@ -1,3 +1,4 @@
+$orange: #FC8B00;
 .container {
   background-color: e0ece4;
 }
@@ -9,6 +10,18 @@
 
 .circle {
   border-radius: 20px;
+}
+.sumbit-show{
+  background: $orange;
+  color: white;
+  border-radius: 20px;
+  border: 1px solid $orange;
+  transition-duration: 0.7s;
+  &:hover {
+    color: $orange;
+    background: white;
+    font-weight: bold;
+  }
 }
 
 // .square {
