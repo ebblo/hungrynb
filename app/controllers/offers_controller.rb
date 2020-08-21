@@ -20,16 +20,16 @@ class OffersController < ApplicationController
   end
 
   def show
-    @user = @offer.user
-    @users = [@user]
-    @markers = @users.map do |user|
+    @review = Review.new
+    user = @offer.user
+    @markers = [
       {
         lat: user.latitude,
         lng: user.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { user: user }),
-        image_url: helpers.asset_url('/Users/loicebbing/code/ebblo/rbnb/app/assets/images/pasta.jpg')
+        image_url: helpers.asset_url('pasta.jpg')
       }
-    end
+    ]
   end
 
   def new
