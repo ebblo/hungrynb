@@ -10,7 +10,7 @@ class OffersController < ApplicationController
         {
           lat: offer.user.latitude,
           lng: offer.user.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { user: offer.user }),
+          infoWindow: render_to_string(partial: "info_window", locals: { user: offer.user, offer: offer }),
           image_url: helpers.asset_url('/Users/loicebbing/code/ebblo/rbnb/app/assets/images/pasta.jpg')
         }
       end
@@ -26,7 +26,7 @@ class OffersController < ApplicationController
       {
         lat: user.latitude,
         lng: user.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { user: user }),
+        infoWindow: render_to_string(partial: "info_window", locals: { user: user, offer: @offer  }),
         image_url: helpers.asset_url('pasta.jpg')
       }
     ]
