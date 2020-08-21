@@ -15,7 +15,7 @@
       </div>
     <% end %>
 
-    <div class="card-offer-body p-4">
+    <div class="card-offer-body bg-white p-4">
       <h5><%= offer.title %></h5>
       <div class="d-flex justify-content-between">
         
@@ -24,7 +24,7 @@
       <span><%= offer.date %></span>
     </div>
     <% if offer.user == current_user && params[:controller] == 'pages' %>
-      <div class="card-footer bg-white border-0 py-3">
+      <div class="card-footer bg-white border-0 d-flex justify-content-around px-0 py-3">
             <%= link_to "Show offer", offer_path(offer), class: "rounded-form px-3 py-1 btn card-btn-show" %>
             <%= link_to "Edit offer", edit_offer_path(offer), class: "rounded-form px-3 py-1 btn card-btn-edit" %>
       </div>

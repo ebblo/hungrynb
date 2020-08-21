@@ -22,7 +22,7 @@
 <%# ------------------1ere tabs----------------- %>
   <div class="container tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-    <div class="row justify-content-md-around justify-content-between flex-wrap">
+    <div class="bg-dashboard row justify-content-around flex-wrap">
 
       <% @offers.each do |offer| %>
           <%= render  "shared/card-dashboard", offer: offer %>
@@ -35,7 +35,7 @@
 <%# ------------------2eme tabs----------------- %>
   <div class="container tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <%# < class=""><%= "Offers" %>
-    <div class="bg-dashboard row justify-content-between">
+    <div class="bg-dashboard row justify-content-around flex-wrap">
     
     <%#= link_to "Add new offer", new_offer_path, class:"btn btn-secondary" %>
       
@@ -49,6 +49,7 @@
 
   <%# ------------------3eme tabs----------------- %>
     <div class="container tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3eme test
+    <div class="bg-dashboard row justify-content-around flex-wrap"></div>
     </div>
   </div>
 
