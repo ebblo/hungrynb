@@ -12,18 +12,18 @@
     <img class="rounded-circle" style="width: 75px; height: 75px; object-fit: cover;" src="https://static.skillshare.com/uploads/project/4c49440fec9b45c5464596033e0a23d7/ad168d89" alt="avatar user">
   </div>
   <div class="card pt-1 pb-2 pl-2 m-3 rounded" style="border: none">
-    <h4> Proposé par <strong> <%= @user.first_name %> <%= @user.last_name %></strong> </h4>
+    <h4> Proposé par <strong> <%= @offer.user.first_name %> <%= @offer.user.last_name %></strong> </h4>
     <div class="pl-3 py-0 d-flex align-items-center">
       <i class="fas fa-envelope"></i>
-      <p class="m-0 pl-2"> <%= @user.email %> </p>
+      <p class="m-0 pl-2"> <%= @offer.user.email %> </p>
     </div>
     <div class="pl-3 py-0 d-flex align-items-center">
       <i class="fas fa-phone-alt"></i>
-      <p class="m-0 pl-2"> <%= @user.phone_number %> </p>
+      <p class="m-0 pl-2"> <%= @offer.user.phone_number %> </p>
     </div>
     <div class="pl-3 py-0 d-flex align-items-center">
       <i class="fas fa-map-marker-alt"></i>
-      <p class="m-0 pl-2"> <%= @user.address %> </p>
+      <p class="m-0 pl-2"> <%= @offer.user.address %> </p>
     </div>
   </div>
   <div>
@@ -81,3 +81,19 @@
 
 <%# lien à Sweetalert à ajouter dans un fichier javascipt par la suite %>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
+<%= simple_form_for [ @offer, @review ], remote: true, class:"log-in-form" do |f| %>
+  <%= f.input :content %>          
+  <div  class="d-flex justify-content-between align-items-center">            
+    <%= f.button :submit, value: 'Ajouter un avis', id: 'submit-color' %>
+  </div>
+<% end %>
+
+<div>
+  <% @offer.reviews.each do |review| %>
+    <ul>
+      <li id="review-<%= review.id %>"><%= review.content %></li>
+    </ul>
+  <% end %>
+</div>
