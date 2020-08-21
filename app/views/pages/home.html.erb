@@ -5,10 +5,10 @@
     <div class="container mb-5">
       <h1 class="text-white">Voyagez et découvrez les traditions culinaires locales, comme si vous étiez chez vous.</h1>
     </div>
-    <div class="container">
+    <div class="container d-flex justify-content-center">
 
       <%# searchbar on desktop %>
-      <div class="container-search-bar bg-white d-none d-md-flex px-2 justify-content-center">
+      <div class="container-search-bar col-8 bg-white d-none d-md-flex px-2 justify-content-center">
         <%# <form action="/offers" method="get">
           <div class="input-group d-flex align-items-center">
             <div class="input-group-prepend d-flex align-items-center">
@@ -26,20 +26,24 @@
           </div>
         </form>         %>
 
-        <div class="m-0">
+        <div class="m-0 search-home">
           <%= form_tag offers_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control mt-1",
-              placeholder: "Trouver un hôte"
-            %>       
+            <div class="d-flex ">
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control mt-1",
+                placeholder: "Trouver un hôte",
+                id:"test-label"
+              %>
+              <label for="test-label" class="d-flex align-items-center m-0 p-0 label-test"><i class="fal fa-search other-test"></i></label>
+            </div>
             <%= date_field_tag :start_date,
               params[:start_date]
             %>
             <%= date_field_tag :end_date,
               params[:end_date]
             %>
-            <%= submit_tag "Rechercher", class: "btn btn-warning m-1" %>
+            <%= submit_tag "Rechercher", class: "btn btn-warning m-1 btn-submit" %>
           <% end %>
         </div>
       </div>
@@ -65,7 +69,9 @@
     </div>
   </div>
 
+  <h2 class="text-center bold my-5"> Communiquez en mangeant !</h2>
   <div class="container d-flex justify-content-center my-5 flex-wrap">
+  
     <div class="card-home col-10 col-lg-5 m-4 p-0 bg-white shadow-sm">
     <div class="bg-img-card-home asia"></div>
       <div class="card-home-body border p-4 text-center">
