@@ -5,7 +5,7 @@
       <div class="card-offer-img" style="background: url(<%= url_for(offer.photo) %>);">
         <% if offer.user == current_user && params[:controller] == 'pages' %>
           <%= link_to offer_path(offer), method: :delete, class: "card-btn-delete float-right m-2" do %>
-            <%= cl_image_tag 'https://res.cloudinary.com/kyulol/image/upload/v1597949378/delete-cross_unytdj.svg', class:"delete-icon" %>
+            <%= image_tag 'https://res.cloudinary.com/kyulol/image/upload/v1597949378/delete-cross_unytdj.svg', class:"delete-icon" %>
           <% end %> 
         <% end %>
         <p class="rounded-form px-3 py-1 card-btn-category text-white"><%= offer.category %></p>
