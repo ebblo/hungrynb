@@ -6,7 +6,7 @@ class Offer < ApplicationRecord
 
   validates :title, :price, :category, :description, :date, presence: true
 
-  CATEGORIES = ["French", "Italian", "Chinese"]
+  CATEGORIES = ["Français", "Italien", "Asiatique", "Indien", "Africain", "Libanais", "Espagnol", "Cuisine du monde", "Suisse"]
 
   has_one_attached :photo
 end
