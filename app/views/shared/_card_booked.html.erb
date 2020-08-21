@@ -1,31 +1,32 @@
 <div class="card-offer col-10 col-md-3 col-lg- p-0 m-3">
 
-    <% if booking.offer.photo.attached? %>
-      <div class="card-offer-img" style="background: url(<%= url_for(booking.offer.photo) %>);">
-        <% if booking.user == current_user && params[:controller] == 'pages' %>
-          <%= link_to booking_path(booking), method: :delete, class: "card-btn-delete float-right m-2" do %>
-            <%= cl_image_tag 'https://res.cloudinary.com/kyulol/image/upload/v1597949378/delete-cross_unytdj.svg', class:"delete-icon" %>
-          <% end %> 
-        <% end %>
-        <p class="rounded-form px-3 py-1 card-btn-category text-white"><%= booking.offer.category %></p>
-      </div>
-    <% else %>
-      <div class="card-offer-img" style="background: url(https://picsum.photos/1000/600);">
-        <p class="rounded-form px-3 py-1 card-btn-category text-white"><%= booking.offer.category %></p>
-      </div>
-    <% end %>
-
-    <div class="card-offer-body p-4">
-      <h5><%= booking.offer.title %></h5>
-      <div class="d-flex justify-content-between">
-        
-        <span><%= booking.offer.price %> €</span>
-      </div>
-      <span><%= booking.offer.date %></span>
+  <% if booking.offer.photo.attached? %>
+    <div class="card-offer-img" style="background: url(<%= url_for(booking.offer.photo) %>);">
+      <% if booking.user == current_user && params[:controller] == 'pages' %>
+        <%= link_to booking_path(booking), method: :delete, class: "card-btn-delete float-right m-2" do %>
+          <%= cl_image_tag 'https://res.cloudinary.com/kyulol/image/upload/v1597949378/delete-cross_unytdj.svg', class:"delete-icon" %>
+        <% end %> 
+      <% end %>
+      <p class="rounded-form px-3 py-1 card-btn-category text-white"><%= booking.offer.category %></p>
     </div>
-      <div class="card-footer d-flex justify-content-center bg-white border-0 py-3">
-            <%= link_to "Show booking", booking_path(booking), class: "rounded-form px-3 py-1 btn card-btn-show" %>
-      </div>
+  <% else %>
+    <div class="card-offer-img" style="background: url(https://picsum.photos/1000/600);">
+      <%= link_to booking_path(booking), method: :delete, class: "card-btn-delete float-right m-2" do %>
+        <%= cl_image_tag 'https://res.cloudinary.com/kyulol/image/upload/v1597949378/delete-cross_unytdj.svg', class:"delete-icon" %>
+      <% end %> 
+      <p class="rounded-form px-3 py-1 card-btn-category text-white"><%= booking.offer.category %></p>
+    </div>
+  <% end %>
+
+  <div class="card-offer-body p-4">
+    <h5><%= booking.offer.title %></h5>
+    <div class="d-flex justify-content-between">
+      <span><%= booking.offer.price %> €</span>
+    </div>
+    <span><%= booking.offer.date %></span>
+  </div>
+  <div class="card-footer d-flex justify-content-center bg-white border-0 py-3">
+          <%= link_to "Show booking", booking_path(booking), class: "rounded-form px-3 py-1 btn card-btn-show" %>
   </div>
 
-  
+</div>
